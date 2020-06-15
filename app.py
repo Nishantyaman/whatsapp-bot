@@ -20,7 +20,7 @@ def bot():
         response = "*Hi! I am the Quarantine Bot*"
         msg.body(response)
     
-    return str(response)
+    return str(resp)
 
 if __name__ == "__main__":
     app.run(host='localhost', port=5000)
