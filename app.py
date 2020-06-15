@@ -10,19 +10,17 @@ def hello():
 @app.route('/bot', methods=['POST'])
 def bot():
     response ='test karatani'
+    print(request.method)
     if request.method == 'POST':
         incoming_msg = request.values.get('Body', '')
 
         # create Twilio XML response
         resp = MessagingResponse()
         msg = resp.message()
-
-        if incoming_msg == 'hello':
-            response = "*Hi! I am the Quarantine Bot*"
-            msg.body(response)
+        response = "*Hi! I am the Quarantine Bot*"
+        msg.body(response)
     
-        return str(response)
-    return str(response) 
+    return str(response)
 
 if __name__ == "__main__":
-    app.run(host='localhost', port=5000, debug=True)
+    app.run(host='localhost', port=5000)
